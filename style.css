@@ -20,6 +20,9 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 10px 10px 5px var(--part);
+    border: 1px solid var(--text);
+    border-radius: 10px;
 }
 .header>h1{
 font-size: x-large;
@@ -32,6 +35,7 @@ margin-top: 1em;
     justify-content: space-between;
     gap: 6em;
     margin-top: 2em;
+    margin-bottom: 3em;
 }
 .right{
  display: flex;
@@ -40,6 +44,7 @@ margin-top: 1em;
  justify-content: center;
  align-items: center;
  border-radius: 10px;
+box-shadow: 5px 5px 1px var(--text);
 }
 .left{
  display: flex;
@@ -48,6 +53,7 @@ margin-top: 1em;
  justify-content: center;
  align-items: center;
  border-radius: 10px;
+ box-shadow: 5px 5px 1px var(--text);
 }
 form{
   display: flex;
