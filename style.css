@@ -126,3 +126,9 @@ justify-content: flex-start;
   cursor: pointer;
   box-shadow: 5px 5px 1px var(--text);
 }
+.buttons>button>ion-icon{
+    font-size: 28px;
+    font-weight: bolder;
+    padding-right: 10px;
+    color: red;
+}
