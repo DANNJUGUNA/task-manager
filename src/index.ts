@@ -63,7 +63,47 @@ class TaskService {
 
 const userService = new UserService();
 const taskService = new TaskService();
-
+const userForm = document.getElementById("userForm") as HTMLFormElement;
+const createUserbtn=document.getElementById("createUserbtn") as HTMLButtonElement;
+const userName=document.getElementById("name") as HTMLInputElement;
+const userEmail=document.getElementById("email") as HTMLInputElement;
+const userButton= document.getElementById("userbutton") as HTMLButtonElement;
+const listTable = document.getElementById("listtable") as HTMLBodyElement;
+const taskForm = document.getElementById("taskForm") as HTMLFormElement;
+const createTaskbtn=document.getElementById("createTaskbtn") as HTMLButtonElement;
+const taskTitle=document.getElementById("title") as HTMLInputElement;
+const taskDescription=document.getElementById("description") as HTMLInputElement;
+userForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = userName.value;
+    const email = userEmail.value;
+    userService.createUser(name,email);
+    userEmail.value='';
+    userName.value='';
+  const users= userService.listUsers();
+  listTable.innerHTML=`
+  <table id="tab">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>EMAIL</th>
+                <th>DELETE</th>
+            </tr>
+        </thead>
+        <tbody>
+          ${users.map(user => `
+            <tr>
+              <td>${user.id}</td>
+              <td>${user.name}</td>
+              <td>${user.email}</td>
+              <td><button id="deleteUser">Delete User</button></td>
+            </tr>
+      `).join('')}
+        </tbody>
+    </table>
+  `
+  })
 
 
 
