@@ -11,7 +11,7 @@ class Task {
     constructor(title, description) {
         this.title = title;
         this.description = description;
-        this.assignedTo = null;
+        this.assignedTo = "Not Assigned";
         this.id = Task.nextId++;
     }
 }
@@ -137,6 +137,7 @@ taskForm.addEventListener('submit', (e) => {
                 <th>ID</th>
                 <th>TASK</th>
                 <th>DESCRIPTION</th>
+                <th>Assigned To</th>
                 <th>ASSIGN</th>
                 <th>DELETE</th>
             </tr>
@@ -147,6 +148,7 @@ taskForm.addEventListener('submit', (e) => {
               <td>${task.id}</td>
               <td>${task.title}</td>
               <td>${task.description}</td>
+              <td>${task.assignedTo}</td>
               <td><button id="deletetask">Assign Task</button></td>
               <td><button id="deletetask">Delete Task</button></td>
             </tr>
@@ -165,6 +167,7 @@ taskButton.addEventListener('click', e => {
                 <th>ID</th>
                 <th>TASK</th>
                 <th>DESCRIPTION</th>
+                <th>Assigned To</th>
                 <th>ASSIGN</th>
                 <th>DELETE</th>
             </tr>
@@ -175,11 +178,15 @@ taskButton.addEventListener('click', e => {
               <td>${task.id}</td>
               <td>${task.title}</td>
               <td>${task.description}</td>
-              <td><button id="deletetask">Assign Task</button></td>
+              <td>${task.assignedTo}</td>
+              <td><button id="assignTask">Assign Task</button></td>
               <td><button id="deletetask">Delete Task</button></td>
             </tr>
       `).join('')}
         </tbody>
     </table>
   `;
+});
+const assignTaskbtn = document.getElementById('assignTask');
+assignTaskbtn.addEventListener('click', e => {
 });
