@@ -133,3 +133,38 @@ userButton.addEventListener("click", e=>{
 })
 
 
+taskForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const title = taskTitle.value;
+    const description = taskDescription.value;
+    taskService.createTask(title,description);
+    taskTitle.value='';
+    taskDescription.value='';
+  const tasks= taskService.listTasks();
+  listTable.innerHTML=`
+  <table id="tab">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>TASK</th>
+                <th>DESCRIPTION</th>
+                <th>ASSIGN</th>
+                <th>DELETE</th>
+            </tr>
+        </thead>
+        <tbody>
+          ${tasks.map(task => `
+            <tr>
+              <td>${task.id}</td>
+              <td>${task.title}</td>
+              <td>${task.description}</td>
+              <td><button id="deletetask">Assign Task</button></td>
+              <td><button id="deletetask">Delete Task</button></td>
+            </tr>
+      `).join('')}
+        </tbody>
+    </table>
+  `
+  })
+
+
