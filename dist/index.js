@@ -89,7 +89,7 @@ userForm.addEventListener('submit', (e) => {
               <td>${user.id}</td>
               <td>${user.name}</td>
               <td>${user.email}</td>
-              <td><button id="deleteUser">Delete User</button></td>
+              <td><button id="deleteUserBtn" data-id="${user.id}">Delete User</button></td>
             </tr>
       `).join('')}
         </tbody>
@@ -189,4 +189,5 @@ taskButton.addEventListener('click', e => {
 });
 const assignTaskbtn = document.getElementById('assignTask');
 assignTaskbtn.addEventListener('click', e => {
+    e.preventDefault();
 });
