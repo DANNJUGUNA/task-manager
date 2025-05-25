@@ -68,6 +68,7 @@ const createUserbtn=document.getElementById("createUserbtn") as HTMLButtonElemen
 const userName=document.getElementById("name") as HTMLInputElement;
 const userEmail=document.getElementById("email") as HTMLInputElement;
 const userButton= document.getElementById("userbutton") as HTMLButtonElement;
+const taskButton=document.getElementById('taskbutton') as HTMLButtonElement;
 const listTable = document.getElementById("listtable") as HTMLBodyElement;
 const taskForm = document.getElementById("taskForm") as HTMLFormElement;
 const createTaskbtn=document.getElementById("createTaskbtn") as HTMLButtonElement;
@@ -166,5 +167,32 @@ taskForm.addEventListener('submit', (e) => {
     </table>
   `
   })
-
+taskButton.addEventListener('click', e=>{
+   e.preventDefault();
+   const tasks= taskService.listTasks();
+  listTable.innerHTML=`
+  <table id="tab">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>TASK</th>
+                <th>DESCRIPTION</th>
+                <th>ASSIGN</th>
+                <th>DELETE</th>
+            </tr>
+        </thead>
+        <tbody>
+          ${tasks.map(task => `
+            <tr>
+              <td>${task.id}</td>
+              <td>${task.title}</td>
+              <td>${task.description}</td>
+              <td><button id="deletetask">Assign Task</button></td>
+              <td><button id="deletetask">Delete Task</button></td>
+            </tr>
+      `).join('')}
+        </tbody>
+    </table>
+  `
+})
 
