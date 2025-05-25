@@ -99,7 +99,8 @@ form>button>ion-icon{
 }
 .displaylists{
 display: flex;
-justify-content: flex-start;
+flex-direction: column;
+margin-bottom: 2em;
 }
 .buttons{
   background-color: var(--part);
@@ -131,4 +132,26 @@ justify-content: flex-start;
     font-weight: bolder;
     padding-right: 10px;
     color: red;
+}
+#tab{
+  margin-left: -5em;
+  border-collapse: collapse;
+  width: 150%;
+}
+#tab td, #tab th {
+  border: 1px solid #0f0f0f;
+  padding: 8px;
+}
+#tab th{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: var(--part);
+  color: white;}
+
+#tab tbody>tr{
+  background-color: var(--text); 
+  color: black;
+  text-align: center;
+  border: 1px solid #0f0f0f;
 }
