@@ -16,34 +16,35 @@
         <section id="app">
             <div class="right">
                 <h1>Add User</h1>
-                <form action="">
+                <form id="userForm">
                     <label for="name">Name<span class="required">*</span></label>
                     <input type="text" id="name" placeholder="Full Name" required />
                     <label for="email">Email Address<span class="required">*</span></label>
                     <input type="email" id="email" placeholder="user@example.com" required />
-                    <button> <ion-icon name="add-circle-outline"></ion-icon>Add User</button>
+                    <button type="submit" id="createUserbtn"> <ion-icon name="add-circle-outline"></ion-icon>Add User</button>
                 </form>
             </div>
             <div class="left">
                 <h1>Add Task</h1>
-                <form action="">
+                <form id="taskForm">
                     <label for="name">Title<span class="required">*</span></label>
-                    <input type="text" id="name" placeholder="Task Title" required />
+                    <input type="text" id="title" placeholder="Task Title" required />
                     <label for="email">Description<span class="required">*</span></label>
-                    <input type="email" id="email" placeholder="Task Description" required />
-                    <button> <ion-icon name="add-circle-outline"></ion-icon>Add Task</button>
+                    <input type="text" id="description" placeholder="Task Description" required />
+                    <button type="submit" id="createTaskbtn"> <ion-icon name="add-circle-outline"></ion-icon>Add Task</button>
                 </form>
             </div>
         </section>
         <section class="displaylists">
             <div class="buttons">
-                <button><ion-icon name="people-circle-outline"></ion-icon>Users</button>
-                <button><ion-icon name="code-working-outline"></ion-icon>Tasks</button>
+                <button id="userbutton"><ion-icon name="people-circle-outline"></ion-icon>Users</button>
+                <button id="taskbutton"><ion-icon name="code-working-outline"></ion-icon>Tasks</button>
             </div>
-            <div class="listtable">
+            <div id="listtable">
 
             </div>
         </section>
     </section>
+    <script src="./dist/index.js"></script>
 </body>
 </html>
