@@ -105,6 +105,31 @@ userForm.addEventListener('submit', (e) => {
   `
   })
 
-
+userButton.addEventListener("click", e=>{
+  e.preventDefault();
+  const users= userService.listUsers();
+  listTable.innerHTML=`
+  <table id="tab">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>EMAIL</th>
+                <th>DELETE</th>
+            </tr>
+        </thead>
+        <tbody>
+          ${users.map(user => `
+            <tr>
+              <td>${user.id}</td>
+              <td>${user.name}</td>
+              <td>${user.email}</td>
+              <td><button id="deleteUser">Delete User</button></td>
+            </tr>
+      `).join('')}
+        </tbody>
+    </table>
+  `
+})
 
 
